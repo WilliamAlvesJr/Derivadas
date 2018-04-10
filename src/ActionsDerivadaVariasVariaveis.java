@@ -3,9 +3,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
-import javax.swing.JPanel;
-import javax.swing.JTable;
-
 public class ActionsDerivadaVariasVariaveis extends PainelDerivadaDeVariasVariaveis {
 	
 	ActionsDerivadaVariasVariaveis(){
