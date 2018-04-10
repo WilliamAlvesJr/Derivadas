@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class DerivadaDeVariasVariaveis extends Deriva {
 
-	public double Derivadas(String sFunc, String erro, String... sX){
+	public Stack<Double> Derivadas(String sFunc, String erro, String... sX){
 		double x[] = new double[sX.length];
 		int j = 0;
 		for (String sx : sX) {
@@ -49,7 +49,7 @@ public class DerivadaDeVariasVariaveis extends Deriva {
 			d.push(p);
 			j++;
 		}
-		System.out.println("Valor de d: "+d);	
-		return p;
+//		System.out.println("Valor de d: "+d);	
+		return d;
 	}
 }

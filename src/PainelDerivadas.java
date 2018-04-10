@@ -9,16 +9,19 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class PainelDerivadas extends Window {
-
+	String DEFAULT_FUNC_MSG  = "Digite a função";
+	String DEFAULT_ERROR_MSG = "Digite o erro";
+	String DEFAULT_X_MSG     = "Digite o valor de x: ";
+	
 	JButton derivar = new JButton("Derivar");
-	JTextField func = new JTextField("Digite a função");
+	JTextField func = new JTextField(DEFAULT_FUNC_MSG);
 	JLabel d1       = new JLabel("f'(x): ");
 	JLabel d2       = new JLabel("f''(x): ");
 	JLabel eValue   = new JLabel("Erro: ");
-	JTextField erro = new JTextField("Digite o erro");
+	JTextField erro = new JTextField(DEFAULT_ERROR_MSG);
 	JLabel f        = new JLabel("f(x): ");
 	JLabel xValue   = new JLabel("Valor de x: ");
-	JTextField x 	= new JTextField("Digite o valor de x");
+	JTextField x 	= new JTextField(DEFAULT_X_MSG);
 	
 	PainelDerivadas(){
 		
