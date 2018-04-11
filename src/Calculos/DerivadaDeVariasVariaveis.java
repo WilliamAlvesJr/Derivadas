@@ -1,10 +1,6 @@
 package Calculos;
 import java.util.Stack;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
-
 public class DerivadaDeVariasVariaveis extends Deriva {
 
 	public Stack<Double> Derivadas(String sFunc, String erro, String... sX){

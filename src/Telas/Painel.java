@@ -8,7 +8,7 @@ import Core.Window;
 
 public class Painel extends Window {
 	public JButton derivadas 			    = new JButton("Derivadas de uma variável");
-	public JButton derivadaVariasVariaveis = new JButton("Deriavada de varias variáveis");
+	public JButton derivadaVariasVariaveis  = new JButton("Deriavada de varias variáveis");
 	public JButton gradiente				= new JButton("Gradiente");
 	public JButton hessiana 				= new JButton("Hessiana");
 	public JButton jacobiano 				= new JButton("Jacobiano");

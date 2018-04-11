@@ -7,30 +7,30 @@ import Listeners.ActionsMsgPopup;
 import Telas.MsgPopup;
 
 public class Deriva {
-	static MsgPopup msg = new MsgPopup();
+	public static MsgPopup msg = new MsgPopup();
 	
 	double h;
 	double p, q;
 	int i = 1;
 
-	public double Deriva(String sFunc, String sX, String erro){
+	public double Derivar(String sFunc, String sX, String erro, int g){
 		msg.dispose();
 		
 		try {
 		Double e = Double.parseDouble(erro);
 		Double x = Double.parseDouble(sX);
 		h = 1000*e;
-		p = equacao(x, sFunc, 1);
+		p = equacao(x, sFunc, g);
 		while(i < 10) {
 			q = p;
 			h = h/2;
-			p = equacao(x, sFunc, 1);
+			p = equacao(x, sFunc, g);
 			if(Math.abs(p-q) < e)
 				break;
 			i++;
 		}}catch(Exception e){
-			if(!msg.isVisible())
-				new ActionsMsgPopup();
+			if(!msg.isVisible()) 
+				new MsgPopup();
 		}
 		return p;
 	}
@@ -50,36 +50,17 @@ public class Deriva {
 	}
 
 	public double equacao(double x, String sFunc, int g) {
-		int grau = g;
-		if(grau > 1) {
-			grau--;
-			//			return ( f(x+2*h, sFunc) - 2*f(x, sFunc) + defineSignal(grau) *f(x-2*h, sFunc))/(4*h*h);
-			//			return ( f(x+2*h, sFunc) - 2*f(x, sFunc) + f(x-2*h, sFunc) ) /           (4*h*h);
-			return (
-				(f(x+g*h, sFunc) 
-				- defineFunc1(x, sFunc, g)//(2*f(x, sFunc)) 
-				+ (defineSinal(g) 
-				* f(x-g*h, sFunc)))   
-				/ (Math.pow(2*h, g))
-			);
+		if(g > 1) {
+			if(g == 2) {
+				return ( f(x+g*h, sFunc) - g*f(x, sFunc) + f(x-g*h, sFunc) ) / (Math.pow((2*h), g));
+			}
+			if(g == 3) {
+				return ( f(x+g*h, sFunc) - g*f(x+h, sFunc) + g*f(x-h, sFunc) - f(x-g*h, sFunc) ) / (Math.pow((2*h), g));
+			}
+			else
+				return ( f(x+g*h, sFunc) - g*f(x+2*h, sFunc) + 6*f(x, sFunc) - 4*f(x-2*h, sFunc) + f(x-g*h, sFunc)) / (Math.pow((2*h), g));
 		}
 		else
 			return ((f(x+h, sFunc) - f(x-h, sFunc))/(2*h));
-	}
-
-	public int defineSinal(int grau) {
-		int signal = -1;
-		for(int i = 1; i < grau; i++) {
-			signal *= -1; 
-		}
-		return signal;
-	}
-	
-	public double defineFunc1(double x, String sFunc, int g) {
-		if(g%2 == 0) {
-			return ((2*(g-1))*f(x, sFunc)*defineSinal(g));
-		}
-		else 
-			return 0;
 	}
 }
