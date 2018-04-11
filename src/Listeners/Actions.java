@@ -1,0 +1,29 @@
+package Listeners;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import Telas.Painel;
+
+public class Actions extends Painel {
+
+	public Actions(){
+			derivadaVariasVariaveis.addActionListener(new ActionListener() { 
+				public void actionPerformed(ActionEvent e) {
+					new ActionsDerivadaVariasVariaveis();
+
+				} 
+			});
+
+			derivadas.addActionListener(new ActionListener() { 
+				public void actionPerformed(ActionEvent e) { 
+					new ActionsDerivadas();
+				} 
+			});
+			
+			gradiente.addActionListener(new ActionListener() { 
+				public void actionPerformed(ActionEvent e) { 
+					new ActionsGradiente();
+				} 
+			});
+	}
+}
