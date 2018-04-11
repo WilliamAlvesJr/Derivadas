@@ -16,5 +16,11 @@ public class Actions extends Painel {
 					new ActionsDerivadas();
 				} 
 			});
+			
+			gradiente.addActionListener(new ActionListener() { 
+				public void actionPerformed(ActionEvent e) { 
+					new ActionsGradiente();
+				} 
+			});
 	}
 }
