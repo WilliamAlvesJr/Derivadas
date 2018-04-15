@@ -13,10 +13,10 @@ public class ActionsDerivadas extends PainelDerivadas {
 		derivar.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
 				int g = grau.getSelectedIndex()+1;
-				if(grau.getSelectedIndex() > 1)
-					if(grau.getSelectedIndex() == 2)
+				if(g > 1)
+					if(g == 2)
 						res.setText("f''(x) : "+new Deriva().Derivar(func.getText(), x.getText(), erro.getText(), g));
-					else if(grau.getSelectedIndex() == 3)
+					else if(g == 3)
 						res.setText("f'''(x) : "+new Deriva().Derivar(func.getText(), x.getText(), erro.getText(), g));
 					else 
 						res.setText("f''''(x) : "+new Deriva().Derivar(func.getText(), x.getText(), erro.getText(), g));

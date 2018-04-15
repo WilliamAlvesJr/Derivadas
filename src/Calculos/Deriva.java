@@ -1,37 +1,40 @@
 package Calculos;
+
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-
 import Listeners.ActionsMsgPopup;
 import Telas.MsgPopup;
 
 public class Deriva {
-	public static MsgPopup msg = new MsgPopup();
-	
+	static MsgPopup msg = new MsgPopup();
+
 	double h;
 	double p, q;
 	int i = 1;
 
-	public double Derivar(String sFunc, String sX, String erro, int g){
+	public Deriva(){
 		msg.dispose();
-		
+	}
+
+	public double Derivar(String sFunc, String sX, String erro, int g){
 		try {
-		Double e = Double.parseDouble(erro);
-		Double x = Double.parseDouble(sX);
-		h = 1000*e;
-		p = equacao(x, sFunc, g);
-		while(i < 10) {
-			q = p;
-			h = h/2;
+
+			Double e = Double.parseDouble(erro);
+			Double x = Double.parseDouble(sX);
+			h = 1000*e;
 			p = equacao(x, sFunc, g);
-			if(Math.abs(p-q) < e)
-				break;
-			i++;
-		}}catch(Exception e){
-			if(!msg.isVisible()) 
-				new MsgPopup();
-		}
+			while(i < 10) {
+				q = p;
+				h = h/2;
+				p = equacao(x, sFunc, g);
+				if(Math.abs(p-q) < e)
+					break;
+				i++;
+			}}catch(Exception e){
+				if(!msg.isVisible()) 
+					new ActionsMsgPopup();
+			}
 		return p;
 	}
 

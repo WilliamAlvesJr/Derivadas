@@ -18,11 +18,11 @@ public class MsgPopup extends Window {
 		setSize(200, 120);
 		setAlwaysOnTop(true);
 		setLocation(50, 50);
-
+		
 		JPanel jpanel = new JPanel();
+		
 		jpanel.setLayout(new BorderLayout());
 		jpanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-
 		jpanel.add(msg1, BorderLayout.NORTH);
 		jpanel.add(msg2, BorderLayout.CENTER);
 		jpanel.add(btn, BorderLayout.SOUTH);

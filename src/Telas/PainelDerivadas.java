@@ -7,7 +7,6 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -29,7 +28,7 @@ public class PainelDerivadas extends Window {
 	public JLabel xValue 	   = new JLabel("Valor de x: ");
 	public JTextField x 	   = new JTextField(DEFAULT_X_MSG);
 	public JLabel grauValue    = new JLabel("Escolha o grau da derivada");
-	public JComboBox grau	   = new JComboBox(GRAU_VALUE);
+	public JComboBox<String> grau	   = new JComboBox<String>(GRAU_VALUE);
 
 	public PainelDerivadas(){
 		

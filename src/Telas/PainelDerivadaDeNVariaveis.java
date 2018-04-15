@@ -1,10 +1,12 @@
 package Telas;
 
+import java.awt.Checkbox;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import javax.swing.Box;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -14,7 +16,7 @@ import javax.swing.JTextField;
 import Core.Window;
 
 
-public class PainelDerivadaDeVariasVariaveis extends Window {
+public class PainelDerivadaDeNVariaveis extends Window {
 	public String DEFAULT_FUNC_MSG  = "Digite a função";
 	public String DEFAULT_ERROR_MSG = "Digite o erro";
 	public String DEFAULT_X_MSG     = "Digite os valores de x: ";
@@ -28,11 +30,12 @@ public class PainelDerivadaDeVariasVariaveis extends Window {
 	public JLabel f        		  = new JLabel("f(x): ");
 	public JScrollPane scrollpane = new JScrollPane();
 	public JPanel jpanel          = new JPanel(new FlowLayout());
-	public JLabel xInfo		 	  = new JLabel("INFO: Digite até 15 valores para x, separe cada valor por ';'");
+	public JLabel xInfo		 	  = new JLabel("INFO: Digite até 15 valores para x e f(x), separe cada valor por ';'");
 	public JLabel xValue		  = new JLabel("x[i]");
 	public JTextField x			  = new JTextField(DEFAULT_X_MSG);
+	public JCheckBox segunda	  = new JCheckBox("f''(x)");
 	
-	String[] columnNames = {"i", "x[i]"};
+	public String[] columnNames = {"f(x)", "f'(x[i])"};
 	
 	public String [][] data = {
 			{"",""}, {"",""}, {"",""}, {"",""}, {"",""}, {"",""}, {"",""}, {"",""},
@@ -41,7 +44,7 @@ public class PainelDerivadaDeVariasVariaveis extends Window {
 
 	JTable table = new JTable(data,columnNames);
 	
-	public PainelDerivadaDeVariasVariaveis() {	
+	public PainelDerivadaDeNVariaveis() {	
 
 		table = new JTable(data,columnNames);
 		scrollpane = new JScrollPane(table);
@@ -56,10 +59,10 @@ public class PainelDerivadaDeVariasVariaveis extends Window {
 		jpanel.add(eValue);
 		jpanel.add(erro);
 		jpanel.add(xInfo);
-		jpanel.add(Box.createRigidArea(new Dimension(60, 0)));
 		jpanel.add(xValue);
 		jpanel.add(x);
 		jpanel.add(derivar);
+		jpanel.add(segunda);
 		jpanel.add(scrollpane);
 		
 		getContentPane().add(jpanel);

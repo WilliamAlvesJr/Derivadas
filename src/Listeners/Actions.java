@@ -9,7 +9,7 @@ public class Actions extends Painel {
 	public Actions(){
 			derivadaVariasVariaveis.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent e) {
-					new ActionsDerivadaVariasVariaveis();
+					new ActionsDerivadaNVariaveis();
 
 				} 
 			});
