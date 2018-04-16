@@ -7,23 +7,30 @@ import Telas.Painel;
 public class Actions extends Painel {
 
 	public Actions(){
-			derivadaVariasVariaveis.addActionListener(new ActionListener() { 
-				public void actionPerformed(ActionEvent e) {
-					new ActionsDerivadaNVariaveis();
+		hessiana.addActionListener(new ActionListener() { 
+			public void actionPerformed(ActionEvent e) {
+				new ActionsHessiana();
+				
+			} 
+		});
 
-				} 
-			});
+		derivadaVariasVariaveis.addActionListener(new ActionListener() { 
+			public void actionPerformed(ActionEvent e) {
+				new ActionsDerivadaNVariaveis();
 
-			derivadas.addActionListener(new ActionListener() { 
-				public void actionPerformed(ActionEvent e) { 
-					new ActionsDerivadas();
-				} 
-			});
-			
-			gradiente.addActionListener(new ActionListener() { 
-				public void actionPerformed(ActionEvent e) { 
-					new ActionsGradiente();
-				} 
-			});
+			} 
+		});
+
+		derivadas.addActionListener(new ActionListener() { 
+			public void actionPerformed(ActionEvent e) { 
+				new ActionsDerivadas();
+			} 
+		});
+
+		gradiente.addActionListener(new ActionListener() { 
+			public void actionPerformed(ActionEvent e) { 
+				new ActionsGradiente();
+			} 
+		});
 	}
 }

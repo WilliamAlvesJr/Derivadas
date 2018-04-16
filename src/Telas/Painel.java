@@ -3,6 +3,7 @@ package Telas;
 import java.awt.FlowLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import Core.Window;
@@ -15,6 +16,7 @@ public class Painel extends Window {
 	public JButton jacobiano 				= new JButton("Jacobiano");
 
 	public Painel(){
+		
 		JPanel jpanel = new JPanel();
 		jpanel.setLayout(new FlowLayout());
 		jpanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 100, 10));
@@ -28,6 +30,7 @@ public class Painel extends Window {
 		
 		setSize(320, 180);
 		setTitle("Derivadas");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		setVisible(true);
 		
